@@ -2,14 +2,13 @@
 {
     public class Logger : FileService
     {
-        public string log { get; private set; }
-
+        public string Log { get; private set; }
 
         public void FileLog(string type, string message)
         {
-            log += $"{DateTime.Now}: {type}: {message}\n";
+            Log += $"{DateTime.Now}: {type}: {message}\n";
 
-            StreamWriter(log);
+            StreamWriter(Log);
         }
 
         public void ConsoleLog(string type, string message)

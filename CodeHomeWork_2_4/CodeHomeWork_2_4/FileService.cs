@@ -2,17 +2,17 @@
 {
     public class FileService
     {
-        private static string _path = string.Empty;
+        public string _path = null;
 
-        private static string _fileName = string.Empty;
+        public string _fileName = null;
 
-        static FileService()
+        public FileService()
         {
-            _path = Path;
-            _fileName = FileName;
+            _path = ".\\log\\";
+            _fileName =$"{DateTime.Now.ToString("hh.hh.ss dd.MM.yyyy") + ".txt"}";
         }
 
-        public static string Path
+        public string Path
         {
             get
             {
@@ -24,7 +24,7 @@
             }
         }
 
-        public static string FileName
+        public string FileName
         {
             get
             {
@@ -39,7 +39,7 @@
         public void StreamWriter(string log)
         {
             DirectoryInfo();
-            using StreamWriter writer = new(_path + _fileName);
+            using StreamWriter writer = new StreamWriter(_path + _fileName);
             writer.Write(log);
         }
 

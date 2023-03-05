@@ -20,19 +20,13 @@ namespace CodeHomeWork_2_4
                     switch (random)
                     {
                         case 0:
-                            {
                                 point = Info();
-                            }
                             break;
                         case 1:
-                            {
                                 point = Warning();
-                            }
                             break;
                         case 2:
-                            {
-                                point = Error();
-                            }
+                            point = Error();
                             break;
                     }
                 }
